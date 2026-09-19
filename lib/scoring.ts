@@ -1,0 +1,2 @@
+export type Score={content:number;reasoning:number;communication:number;leadership:number;groupBehaviour:number;originality:number;overall:number};
+export function calculateScore(s:Omit<Score,"overall">):Score{const overall=s.content*.30+s.reasoning*.15+s.communication*.20+s.leadership*.15+s.groupBehaviour*.15+s.originality*.05;return {...s,overall:Number(Math.max(0,Math.min(10,overall)).toFixed(2))}}
